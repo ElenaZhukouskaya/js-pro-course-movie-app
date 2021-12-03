@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+  /*padding: 0 15px;*/
+  max-width: 100%;
+  /*max-width: 1170px;*/
+  margin: 0 auto;
+}
+
+.MainComponent {
+  width: 100%;
+  height: 100%;
+  /*height: 200px;*/
+  background: url("../src/images/bg2.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.MainComponent:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  /*background-color: #2b2e4a;
+  opacity: 0.8;*/
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.SearchContainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
