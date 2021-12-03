@@ -1,0 +1,78 @@
+.Footer {
+  width: 100%;
+  height: 100%;
+  /*height: 200px;*/
+  background: url("../../images/bg2.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.Footer:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  /*background-color: #2b2e4a;
+  opacity: 0.8;*/
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.FooterContainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 30px;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+/*.FooterContainer {
+  background-color: var(--color-text);
+  padding: 2rem;
+}*/
+
+.CopyRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.Icon {
+  font-family: var(--font-default);
+  font-weight: 500;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  /*margin: auto;*/
+}
+
+.LibraryName {
+  font-family: var(--font-default);
+  font-weight: 500;
+  color: var(--color-primary);
+  font-size: 1rem;
+  /* text-align: center;*/
+  /*padding: 0.5rem 0;*/
+  text-transform: uppercase;
+  margin-left: 0.3rem;
+}
+
+.FooterInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.FooterItem {
+  font-family: var(--font-default);
+  font-weight: 500;
+  color: var(--color-primary);
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 1rem;
+}

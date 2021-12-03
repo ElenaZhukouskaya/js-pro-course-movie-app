@@ -1,0 +1,45 @@
+.TopBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--color-background);
+  padding: 1rem;
+  border: 1px solid var(--color-primary);
+}
+
+.SearchedMoviesAmount {
+  font-family: var(--font-default);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: auto 0;
+  color: var(--color-text);
+}
+
+.SortPanel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Sortby {
+  margin: 10px;
+  font-family: var(--font-default);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text);
+  padding: 5px;
+}
+
+.SortbyButton {
+  width: 10rem;
+  margin: 10px;
+  font-family: var(--font-default);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: white;
+  border: 1px solid var(--color-primary);
+  border-radius: 7px;
+  color: var(--color-text);
+  padding: 5px;
+  cursor: pointer;
+}
