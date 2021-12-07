@@ -97,4 +97,5 @@ input[type="radio"]:checked + *::before {
   font-family: var(--font-default);
   font-size: 1.1rem;
   font-weight: 400;
+  cursor: pointer;
 }

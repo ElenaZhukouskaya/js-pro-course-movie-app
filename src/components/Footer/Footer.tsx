@@ -3,19 +3,19 @@ import styles from "./Footer.module.css";
 
 const Footer: React.FC = () => {
   return (
-    <div className={styles.Footer}>
-      <div className={styles.FooterContainer}>
-        <div className={styles.CopyRight}>
-          <div className={styles.Icon}>
+    <div className={styles.footer}>
+      <div className={styles.footerContainer}>
+        <div className={styles.copyRight}>
+          <div className={styles.icon}>
             <i className="far fa-copyright"></i>
           </div>
-          <h3 className={styles.LibraryName}>Movies' library</h3>;
+          <h3 className={styles.libraryName}>Movies' library</h3>;
         </div>
-        <div className={styles.FooterInfo}>
-          <div className={styles.FooterItem}>Home</div>
-          <div className={styles.FooterItem}>Term of services</div>
-          <div className={styles.FooterItem}>About us</div>
-          <div className={styles.FooterItem}>Recent releases</div>
+        <div className={styles.footerInfo}>
+          <div className={styles.footerItem}>Home</div>
+          <div className={styles.footerItem}>Term of services</div>
+          <div className={styles.footerItem}>About us</div>
+          <div className={styles.footerItem}>Recent releases</div>
         </div>
       </div>
     </div>

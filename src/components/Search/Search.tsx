@@ -1,12 +1,22 @@
+import { SearchBy } from "common/SearchBy";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies } from "store/actions/moviesAction";
+import { RootState } from "store/store";
 import styles from "./Search.module.css";
 
 const Search: React.FC = () => {
   const [input, setInput] = useState("");
-  const [selectedSearch, setSelectedSearch] = useState("");
+  const [selectedSearch, setSelectedSearch] = useState(SearchBy.title);
+
+  const { searchBy, sortBy, limit } = useSelector(
+    (state: RootState) => state.movies
+  );
+
+  const dispatch = useDispatch();
 
   const onClickSearch = () => {
-    console.log("movie:", input);
+    dispatch(fetchMovies(sortBy, "asc", input, searchBy, "", 0, limit));
   };
 
   // onKeyDown handler function
@@ -17,7 +27,7 @@ const Search: React.FC = () => {
   };
 
   const radioHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedSearch(event.target.value);
+    setSelectedSearch(event.target.value as SearchBy);
   };
 
   return (
@@ -30,7 +40,7 @@ const Search: React.FC = () => {
             <input
               type="radio"
               name="select"
-              value="title"
+              value={SearchBy.title}
               id="title"
               onChange={radioHandler}
             />
@@ -40,7 +50,7 @@ const Search: React.FC = () => {
             <input
               type="radio"
               name="select"
-              value="genre"
+              value={SearchBy.genre}
               id="genre"
               onChange={radioHandler}
             />

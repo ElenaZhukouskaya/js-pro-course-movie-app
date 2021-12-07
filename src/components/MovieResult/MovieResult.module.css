@@ -1,0 +1,25 @@
+.resultsContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.movieContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 10rem;
+  margin: 10px;
+  font-family: var(--font-default);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: white;
+  border: 1px solid var(--color-primary);
+  border-radius: 7px;
+  color: var(--color-text);
+  padding: 5px;
+  cursor: pointer;
+}

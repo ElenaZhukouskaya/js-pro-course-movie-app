@@ -1,13 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styles from "./TopBar.module.css";
 
-//interface TopBarProps {
-//  searchedMoviesAmount: number;
-//  limit: MovieItem;
-//}
+/*interface TopBarProps {
+  foundMoviesAmount: number;
+}*/
 
 const TopBar: React.FC = () => {
-  // const [moviesAmount, setMoviesAmount] = useState(limit);
   return (
     <div className={styles.TopBar}>
       <div className={styles.SearchedMoviesAmount}>n movies found</div>
