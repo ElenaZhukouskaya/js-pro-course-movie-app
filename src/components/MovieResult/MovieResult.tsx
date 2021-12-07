@@ -1,47 +1,80 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies } from "store/actions/moviesAction";
+//import { fetchMovies } from "store/actions/moviesAction";
 //import {
 //  fetchMovies,
 //  setMoviesLimit,
 //  SearchMovies,
 //} from "../../store/actions/moviesAction";
-//mport { RootState } from "../../store/store";
+import { RootState } from "../../store/store";
+import MovieCard from "../MovieCard";
 //import { SearchActionType } from "../../store/types";
-//import Movie from "../Movie";
-import Search from "../Search";
+//import Search from "../Search";
 import TopBar from "../TopBar";
-import styles from "./MovieResults.module.css";
+import styles from "./MovieResult.module.css";
 
 const MovieResult: React.FC = () => {
-  //  const { movies } = useSelector((state: RootState) => state.movies);
+  const { movies, loading, total, searchInput, searchBy, sortBy } = useSelector(
+    (state: RootState) => state.movies
+  );
 
-  /*  const dispatch = useDispatch();
-  const [moviesAmount, setMoviesAmount] = useState(20);
+  const dispatch = useDispatch();
+
+  /*
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMovies());
+    dispatch(fetchMovies("title", "asc", "", "title", "", 0, 20));
   }, [dispatch]);
+  */
 
-  useEffect(() => {
-    dispatch(setMoviesLimit(moviesAmount));
-  }, [dispatch, moviesAmount]);*/
+  /*const SearchedMovies = movies.filter((movie) => {
+    if (SearchBy === "title") {
+      return movie.title.toLowerCase().includes(SearchBy.toLowerCase());
+    } else {
+      return movie.genres[movie.id]
+        .toLowerCase()
+        .includes(SearchBy.toLowerCase());
+    }
+  });*/
 
   // const filteredMovies = dispatch(SearchMovies(movies, filter));
+
+  //const [moviesLimit, setMoviesLimit] = useState(20);
+  const showMoreMovies = () => {
+    dispatch(fetchMovies(sortBy, searchInput, searchBy, movies.length));
+  };
+  //попробовать заменить на следующий код:
+  /*useEffect(() => {
+    dispatch(fetchMovies(limit));
+  }, [dispatch, limit]);
+
+  const setNewMovies = useCallback(() => {
+    dispatchEvent(setMoviesLimit(limit + 5));
+  }, [dispatch, limit]);*/
 
   return (
     <div>
       <TopBar />
-      {/*}div className={styles.container}>
-        {movies.map((item) => (
-          <Movie
-            id={item.id}
-            poster_path={item.poster_path}
-            release_date={item.release_date}
-            genres={item.genres}
-            title={item.title}
-          />
-        ))}
-      </div>*/}
+      {movies.length === 0 ? (
+        <div>No films found.</div>
+      ) : (
+        <div className={styles.resultscontainer}>
+          <div className={styles.movieContainer}>
+            {movies.map((movie, index) => (
+              <MovieCard key={movie.id} movie={movie} />
+            ))}
+          </div>
+          {movies.length < total ? (
+            <button className={styles.button} onClick={showMoreMovies}>
+              Show more
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
+      )}
     </div>
   );
 };

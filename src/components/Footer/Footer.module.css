@@ -1,6 +1,6 @@
-.Footer {
+.footer {
   width: 100%;
-  height: 100%;
+
   /*height: 200px;*/
   background: url("../../images/bg2.jpg") no-repeat;
   background-position: center;
@@ -8,7 +8,7 @@
   position: relative;
 }
 
-.Footer:after {
+.footer:after {
   content: "";
   width: 100%;
   height: 100%;
@@ -20,7 +20,7 @@
   left: 0;
 }
 
-.FooterContainer {
+.footerContainer {
   position: relative;
   z-index: 1;
   display: flex;
@@ -35,7 +35,7 @@
   padding: 2rem;
 }*/
 
-.CopyRight {
+.copyRight {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -43,7 +43,7 @@
   align-items: center;
 }
 
-.Icon {
+.icon {
   font-family: var(--font-default);
   font-weight: 500;
   color: var(--color-primary);
@@ -51,7 +51,7 @@
   /*margin: auto;*/
 }
 
-.LibraryName {
+.libraryName {
   font-family: var(--font-default);
   font-weight: 500;
   color: var(--color-primary);
@@ -62,13 +62,13 @@
   margin-left: 0.3rem;
 }
 
-.FooterInfo {
+.footerInfo {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.FooterItem {
+.footerItem {
   font-family: var(--font-default);
   font-weight: 500;
   color: var(--color-primary);

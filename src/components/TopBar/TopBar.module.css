@@ -5,6 +5,7 @@
   background-color: var(--color-background);
   padding: 1rem;
   border: 1px solid var(--color-primary);
+  height: 10%;
 }
 
 .SearchedMoviesAmount {
