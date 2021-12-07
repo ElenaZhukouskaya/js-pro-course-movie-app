@@ -15,7 +15,11 @@ import TopBar from "../TopBar";
 import styles from "./MovieResult.module.css";
 
 const MovieResult: React.FC = () => {
-  const { movies, loading } = useSelector((state: RootState) => state.movies);
+  const { movies, loading, total, searchInput, searchBy, sortBy } = useSelector(
+    (state: RootState) => state.movies
+  );
+
+  const dispatch = useDispatch();
 
   /*
   const dispatch = useDispatch();
@@ -37,10 +41,10 @@ const MovieResult: React.FC = () => {
 
   // const filteredMovies = dispatch(SearchMovies(movies, filter));
 
-  const [moviesLimit, setMoviesLimit] = useState(20);
-  const setNewMovies = useCallback(() => {
-    setMoviesLimit(moviesLimit + 5);
-  }, [moviesLimit, setMoviesLimit]);
+  //const [moviesLimit, setMoviesLimit] = useState(20);
+  const showMoreMovies = () => {
+    dispatch(fetchMovies(sortBy, searchInput, searchBy, movies.length));
+  };
   //попробовать заменить на следующий код:
   /*useEffect(() => {
     dispatch(fetchMovies(limit));
@@ -53,21 +57,26 @@ const MovieResult: React.FC = () => {
   return (
     <div>
       <TopBar />
-      <div className={styles.resultscontainer}>
-        <div className={styles.movieContainer}>
-          {movies.map((movie, index) => (
-            <MovieCard key={movie.id} movie={movie} />
-          ))}
+      {movies.length === 0 ? (
+        <div>No films found.</div>
+      ) : (
+        <div className={styles.resultscontainer}>
+          <div className={styles.movieContainer}>
+            {movies.map((movie, index) => (
+              <MovieCard key={movie.id} movie={movie} />
+            ))}
+          </div>
+          {movies.length < total ? (
+            <button className={styles.button} onClick={showMoreMovies}>
+              Show more
+            </button>
+          ) : (
+            ""
+          )}
         </div>
-        <button className={styles.button} onClick={setNewMovies}>
-          Show more
-        </button>
-      </div>
+      )}
     </div>
   );
 };
 
 export default MovieResult;
-function dispatch(arg0: any) {
-  throw new Error("Function not implemented.");
-}

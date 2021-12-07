@@ -17,6 +17,13 @@ const MovieCard: React.FC<MovieProps> = (props) => {
     setIsModal(isModal === false ? true : false);
   }, [isModal, setIsModal]);
 
+  const getTrimmedText = (text: string) => {
+    var length = text.length;
+    var maxLength = 30;
+
+    return length > maxLength ? text.substring(0, maxLength) + "..." : text;
+  };
+
   return (
     <>
       <div className={styles.Card}>
@@ -45,7 +52,13 @@ const MovieCard: React.FC<MovieProps> = (props) => {
         <div className={styles.Description}>
           <h3 className={styles.Title}>{movie.title}</h3>
           <p className={styles.Date}>{movie.release_date}</p>
-          <div className={styles.Genres}>{movie.genres.join(", ")}</div>
+          <div
+            className={styles.Genres}
+            role="list"
+            aria-label={movie.genres.join(", ")}
+          >
+            {getTrimmedText(movie.genres.join(", "))}
+          </div>
         </div>
       </div>
 

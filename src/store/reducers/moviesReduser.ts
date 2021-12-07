@@ -6,20 +6,22 @@ import { MoviesActionType } from "store/types";
 
 type State = {
   movies: Movie[];
+  total: number;
   loading: boolean;
+  searchInput: string;
   searchBy: SearchBy;
   sortBy: SortBy;
-  limit: number;
-  error: string;
+  error: string | null;
 };
 
 const initialState: State = {
   movies: [],
+  total: 0,
   loading: false,
-  limit: 5,
+  searchInput: "",
   searchBy: SearchBy.title,
   sortBy: SortBy.rating,
-  error: "",
+  error: null,
 };
 
 export const moviesReducer = (
@@ -30,14 +32,21 @@ export const moviesReducer = (
     case MoviesActionType.FETCH_MOVIES: {
       return {
         ...state,
-        movies: [],
         loading: true,
       };
     }
     case MoviesActionType.FETCH_MOVIES_SUCCESS: {
       return {
         ...state,
-        movies: [...action.payload],
+        movies: action.payload.movies,
+        total: action.payload.total,
+        loading: false,
+      };
+    }
+    case MoviesActionType.FETCH_MOVIES_MORE_SUCCESS: {
+      return {
+        ...state,
+        movies: [...state.movies, ...action.payload],
         loading: false,
       };
     }
@@ -47,6 +56,12 @@ export const moviesReducer = (
         movies: [],
         loading: false,
         error: action.payload,
+      };
+    }
+    case MoviesActionType.SET_SEARCH_INPUT: {
+      return {
+        ...state,
+        searchInput: action.payload,
       };
     }
     case MoviesActionType.SET_SEARCH_BY: {
