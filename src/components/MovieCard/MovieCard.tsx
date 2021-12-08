@@ -1,10 +1,7 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import styles from "./MovieCard.module.css";
 import Movie from "../../common/Movie";
 import Modal from "components/Modal";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies } from "store/actions/moviesAction";
-import { RootState } from "store/store";
 
 interface MovieProps {
   movie: Movie;
@@ -19,14 +16,14 @@ const MovieCard: React.FC<MovieProps> = (props) => {
 
   const getTrimmedText = (text: string) => {
     var length = text.length;
-    var maxLength = 30;
+    var maxLength = 35;
 
     return length > maxLength ? text.substring(0, maxLength) + "..." : text;
   };
 
   return (
     <>
-      <div className={styles.Card}>
+      <div className={styles.card}>
         <div className={styles.image}>
           <div className={styles.wrapper}>
             <img
@@ -49,11 +46,11 @@ const MovieCard: React.FC<MovieProps> = (props) => {
           </button>
         </div>
 
-        <div className={styles.Description}>
-          <h3 className={styles.Title}>{movie.title}</h3>
-          <p className={styles.Date}>{movie.release_date}</p>
+        <div className={styles.description}>
+          <h3 className={styles.title}>{movie.title}</h3>
+          <p className={styles.date}>{movie.release_date}</p>
           <div
-            className={styles.Genres}
+            className={styles.genres}
             role="list"
             aria-label={movie.genres.join(", ")}
           >
@@ -77,18 +74,18 @@ const MovieCard: React.FC<MovieProps> = (props) => {
               <div
                 style={{
                   backgroundColor: "#ffffff",
-                  opacity: 0.6,
+                  opacity: 0.7,
                 }}
               >
-                <div className={styles.ModalTitle}>{movie.title}</div>
-                <div className={styles.ModalText}>
+                <div className={styles.modalTitle}>{movie.title}</div>
+                <div className={styles.modalText}>
                   {movie.genres.join(", ")}
                 </div>
-                <div className={styles.ModalText}>{movie.overview}</div>
-                <div className={styles.ModalText}>
+                <div className={styles.modalText}>{movie.overview}</div>
+                <div className={styles.modalText}>
                   Popularity: {movie.vote_average}
                 </div>
-                <div className={styles.ModalText}>
+                <div className={styles.modalText}>
                   Budget: {movie.vote_count}
                 </div>
               </div>

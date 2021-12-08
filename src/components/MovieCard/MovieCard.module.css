@@ -1,17 +1,20 @@
-.Card {
-  max-width: 18%;
-  margin: 15px 10px;
+.card {
+  max-width: 280px;
+  height: 520px;
+  margin: 5px 5px;
   text-align: center;
-  border: 1px solid rgba(204, 209, 208, 1);
-  /*border-radius: 5px;*/
+  border: 1px solid var(--color-primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 5px;
-  /*background-color: var(--color-primary);*/
   position: relative;
   top: 0;
   left: 0;
+}
+
+.image {
+  min-height: 400px;
 }
 
 .wrapper {
@@ -22,57 +25,9 @@
   left: 0;
 }
 
-.image {
-  min-width: 15%;
-  min-height: 70%;
-}
-
-.Description {
-  min-height: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  padding: 10px;
-}
-
-.Title {
-  min-height: 35%;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: black;
+.poster {
   width: 100%;
-  text-align: left;
-  /*padding: 1rem 0;*/
-  text-transform: uppercase;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  margin-bottom: 10px;
-}
-
-.Date {
-  min-height: 25%;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1rem;
-  text-align: left;
-  font-weight: 300;
-  color: black;
-  border: 1px solid rgba(204, 209, 208, 1);
-  padding: 5px;
-  max-width: 50%;
-  white-space: nowrap;
-  margin-bottom: 10px;
-}
-
-.Genres {
-  min-height: 40%;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1rem;
-  font-weight: 300;
-  color: gray;
-  white-space: pre-wrap;
-  text-align: left;
-  padding-bottom: 5px;
+  height: 100%;
 }
 
 .button {
@@ -96,19 +51,61 @@
   font-weight: 600;
 }
 
-.poster {
-  width: 98%;
-  min-height: 100%;
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  min-height: 110px;
 }
 
-.ModalTitle {
+.title {
+  font-family: var(--font-default);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  width: 100%;
+  min-height: 44px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.date {
+  font-family: var(--font-default);
+  font-size: 14px;
+  text-align: left;
+  font-weight: 300;
+  color: var(--color-text);
+
+  padding: 5px;
+  max-width: 40%;
+  min-height: 22px;
+  vertical-align: top;
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+.genres {
+  font-family: var(--font-default);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-text);
+  white-space: pre-wrap;
+  text-align: left;
+  vertical-align: top;
+  padding-bottom: 5px;
+}
+
+.modalTitle {
   font-family: var(--font-default);
   font-size: 1.5rem;
   font-weight: 600;
-  color: black;
+  color: var(--color-text);
   width: 100%;
-  /*text-align: left;*/
-  /*padding: 1rem 0;*/
   text-transform: uppercase;
   word-wrap: break-word;
   white-space: pre-wrap;
@@ -116,14 +113,12 @@
   font-weight: bold;
 }
 
-.ModalText {
+.modalText {
   font-family: var(--font-default);
   font-size: 1rem;
-  /*text-align: center;*/
   font-weight: 400;
-  color: black;
+  color: var(--color-text);
   padding: 5px 30px;
   margin-bottom: 10px;
-  /*max-width: 50%;*/
   font-weight: bold;
 }

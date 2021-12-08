@@ -48,7 +48,7 @@ export const fetchMovies = (
   return (dispatch: Dispatch<MoviesAction>) => {
     dispatch({ type: MoviesActionType.FETCH_MOVIES });
     fetch(
-      `https://reactjs-cdp.herokuapp.com/movies?sortBy=${sortBy}&sortOrder=desc&search=${search}&searchBy=${searchBy}&offset=${offset}&limit=6`
+      `https://reactjs-cdp.herokuapp.com/movies?sortBy=${sortBy}&sortOrder=desc&search=${search}&searchBy=${searchBy}&offset=${offset}&limit=5`
     )
       .then((response) => {
         return response.json();
