@@ -1,13 +1,13 @@
-import { SearchBy } from "common/SearchBy";
 import React, { useState } from "react";
+import styles from "./Search.module.css";
+import { SearchBy } from "common/SearchBy";
+import { RootState } from "store/store";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchMovies,
   setSearchBy,
   setSearchInput,
 } from "store/actions/moviesAction";
-import { RootState } from "store/store";
-import styles from "./Search.module.css";
 
 const Search: React.FC = () => {
   const [input, setInput] = useState("");
@@ -21,7 +21,6 @@ const Search: React.FC = () => {
     dispatch(fetchMovies(sortBy, input, searchBy, 0));
   };
 
-  // onKeyDown handler function
   const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code === "Enter") {
       onClickSearch();
@@ -33,45 +32,42 @@ const Search: React.FC = () => {
   };
 
   return (
-    <div className={styles.SearchContainer}>
-      <h3 className={styles.Slogan}>find your movie by {searchBy}</h3>
-      <div className={styles.Searchby}>
-        {/*<p className={styles.SearchbyTitle}>search by</p>*/}
-        <div className={styles.RadioButtons}>
-          <label>
-            <input
-              type="radio"
-              name="searchBy"
-              value={SearchBy.title}
-              id="title"
-              onChange={radioHandler}
-              defaultChecked
-            />
-            <span className={styles.TitleRadioButtons}>title</span>
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="searchBy"
-              value={SearchBy.genres}
-              id="genres"
-              onChange={radioHandler}
-            />
-            <span className={styles.TitleRadioButtons}>genres</span>
-          </label>
-        </div>
+    <div className={styles.searchContainer}>
+      <h3 className={styles.text}>find your movie by {searchBy}</h3>
+      <div className={styles.searchby}>
+        <label>
+          <input
+            type="radio"
+            name="searchBy"
+            value={SearchBy.title}
+            id="title"
+            onChange={radioHandler}
+            defaultChecked
+          />
+          <span className={styles.titleRadioButton}>title</span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="searchBy"
+            value={SearchBy.genres}
+            id="genres"
+            onChange={radioHandler}
+          />
+          <span className={styles.titleRadioButton}>genres</span>
+        </label>
       </div>
 
-      <div className={styles.SearchPanel}>
+      <div className={styles.searchPanel}>
         <input
-          className={styles.SearchInput}
+          className={styles.searchInput}
           type="text"
           placeholder="Search any movie"
           onChange={(event) => setInput(event.target.value)}
           onKeyDown={keyDownHandler}
         />
-        <button className={styles.SearchButton} onClick={onClickSearch}>
-          Search {"    "}
+        <button className={styles.searchButton} onClick={onClickSearch}>
+          <span className={styles.searchText}> Search {"    "}</span>
           <i className="fas fa-search"></i>
         </button>
       </div>

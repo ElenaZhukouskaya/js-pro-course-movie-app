@@ -1,18 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
+import styles from "./MovieResult.module.css";
+import MovieCard from "../MovieCard";
+import Loader from "components/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "store/actions/moviesAction";
-//import { fetchMovies } from "store/actions/moviesAction";
-//import {
-//  fetchMovies,
-//  setMoviesLimit,
-//  SearchMovies,
-//} from "../../store/actions/moviesAction";
 import { RootState } from "../../store/store";
-import MovieCard from "../MovieCard";
-//import { SearchActionType } from "../../store/types";
-//import Search from "../Search";
-import TopBar from "../TopBar";
-import styles from "./MovieResult.module.css";
 
 const MovieResult: React.FC = () => {
   const { movies, loading, total, searchInput, searchBy, sortBy } = useSelector(
@@ -56,24 +48,30 @@ const MovieResult: React.FC = () => {
 
   return (
     <div>
-      <TopBar />
-      {movies.length === 0 ? (
-        <div>No films found.</div>
-      ) : (
-        <div className={styles.resultscontainer}>
-          <div className={styles.movieContainer}>
-            {movies.map((movie, index) => (
-              <MovieCard key={movie.id} movie={movie} />
-            ))}
-          </div>
-          {movies.length < total ? (
-            <button className={styles.button} onClick={showMoreMovies}>
-              Show more
-            </button>
+      {" "}
+      {!loading ? (
+        <div>
+          {movies.length === 0 ? (
+            <div>No films found.</div>
           ) : (
-            ""
+            <div className={styles.resultscontainer}>
+              <div className={styles.movieContainer}>
+                {movies.map((movie, index) => (
+                  <MovieCard key={movie.id} movie={movie} />
+                ))}
+              </div>
+              {movies.length < total ? (
+                <button className={styles.button} onClick={showMoreMovies}>
+                  Show more
+                </button>
+              ) : (
+                ""
+              )}
+            </div>
           )}
         </div>
+      ) : (
+        <Loader />
       )}
     </div>
   );

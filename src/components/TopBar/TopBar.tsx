@@ -1,13 +1,9 @@
-import { SortBy } from "common/SortBy";
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies, setSortBy } from "store/actions/moviesAction";
-import { RootState } from "store/store";
+import React from "react";
 import styles from "./TopBar.module.css";
-
-/*interface TopBarProps {
-  foundMoviesAmount: number;
-}*/
+import { RootState } from "store/store";
+import { useDispatch, useSelector } from "react-redux";
+import { SortBy } from "common/SortBy";
+import { fetchMovies, setSortBy } from "store/actions/moviesAction";
 
 const TopBar: React.FC = () => {
   const { searchInput, searchBy, total } = useSelector(
@@ -24,10 +20,10 @@ const TopBar: React.FC = () => {
   };
 
   return (
-    <div className={styles.TopBar}>
-      <div className={styles.SearchedMoviesAmount}>{total} movies found</div>
-      <div className={styles.SortPanel}>
-        <p className={styles.Sortby}>Sort by</p>
+    <div className={styles.topBar}>
+      <div className={styles.searchedMoviesAmount}>{total} movies found</div>
+      <div className={styles.sortPanel}>
+        <p className={styles.sortby}>Sort by:</p>
         <label>
           <input
             type="radio"
@@ -36,7 +32,7 @@ const TopBar: React.FC = () => {
             id="releaseDate"
             onChange={radioHandler}
           />
-          <span className={styles.TitleRadioButtons}>release date</span>
+          <span className={styles.titleRadioButtons}>release date</span>
         </label>
         <label>
           <input

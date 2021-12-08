@@ -1,11 +1,11 @@
-.SearchContainer {
+.searchContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /*padding: 10px 30px;*/
+  margin-top: 4rem;
 }
 
-.Slogan {
+.text {
   font-family: var(--font-default);
   font-size: 1.2rem;
   font-weight: 500;
@@ -16,21 +16,21 @@
   text-align: center;
 }
 
-.Searchby {
+.searchby {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  margin: auto;
   padding: 0 0 2rem 0;
 }
 
-.RadioButtons {
+/*.radioButtons {
   display: flex;
   margin: auto;
   /* margin: 0 1.5 1rem 0rem;*/
-  flex-direction: row;
-  /*justify-content: center;
+/*lex-direction: row;*/
+/*justify-content: center;
   align-items: center;*/
-}
+/*}*/
 
 label {
   margin-right: 2rem;
@@ -68,34 +68,136 @@ input[type="radio"]:checked + *::before {
   border-color: var(--color-primary);
 }
 
-.TitleRadioButtons {
-  padding: 1rem 0rem 1rem 0rem;
-  font-family: "Times New Roman", Times, serif;
+.titleRadioButton {
+  padding: 1rem 0rem;
+  font-family: var(--font-default);
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--color-primary);
   text-transform: uppercase;
 }
 
-.SearchPanel {
+.searchPanel {
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 0 0 1rem 0;
 }
 
-.SearchInput {
+.searchInput {
   width: 50%;
   padding: 5px;
   font-family: var(--font-default);
   font-size: 1.1rem;
   font-weight: 400;
+  outline: none;
 }
 
-.SearchButton {
+.searchButton {
   padding: 5px;
   font-family: var(--font-default);
   font-size: 1.1rem;
   font-weight: 400;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .searchContainer {
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .searchContainer {
+    margin-top: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .text {
+    font-size: 1rem;
+  }
+  .titleRadioButton {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .searchContainer {
+    margin-top: 2.6rem;
+  }
+}
+
+@media screen and (max-width: 716px) {
+  .searchContainer {
+    margin-top: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .searchContainer {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+
+  .searchby {
+    padding: 0 0 1rem 0;
+  }
+
+  .text {
+    font-size: 1rem;
+    padding: 0.6rem 0 0.6rem 0;
+  }
+  .titleRadioButton {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .searchInput {
+    font-size: 1rem;
+  }
+
+  .searchButton {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .searchInput {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .searchContainer {
+    margin-left: 0;
+  }
+  .searchButton {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+  }
+  .searchText {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .searchButton {
+    padding: 5px 15px;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .searchInput {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 230px) {
+  .searchInput {
+    font-size: 0.8rem;
+  }
+
+  .searchButton {
+    font-size: 1.1rem;
+  }
 }
