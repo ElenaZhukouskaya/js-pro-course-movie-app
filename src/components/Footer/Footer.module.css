@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  background: url("../../images/footer.jpg") no-repeat;
+  background: url("../../images/footer1.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -22,8 +22,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px 30px;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 15px 30px 5px 30px;
+}
+
+.siteName {
+  font-family: var(--font-default);
+  font-weight: 500;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.link {
+  cursor: pointer;
 }
 
 .copyRight {
@@ -39,58 +51,23 @@
   font-weight: 500;
   color: var(--color-primary);
   font-size: 0.8rem;
+  margin-right: 5px;
 }
 
-.libraryName {
-  font-family: var(--font-default);
-  font-weight: 500;
-  color: var(--color-primary);
-  font-size: 1rem;
-  text-transform: uppercase;
-  margin-left: 0.3rem;
+.icon:last-child {
+  margin-right: 0;
 }
 
-.footerInfo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.footerItem {
-  font-family: var(--font-default);
-  font-weight: 500;
-  color: var(--color-primary);
-  font-size: 1rem;
-  text-align: center;
-  margin: 0 1rem;
-}
-
-@media screen and (max-width: 520px) {
-  .copyRight {
-    margin-bottom: 0.8rem;
+@media screen and (max-width: 770px) {
+  .siteName {
+    font-size: 1rem;
   }
 
-  .libraryName {
-    font-weight: 400;
+  .footerItem,
+  .link {
     font-size: 0.9rem;
   }
-
-  .footerItem {
-    font-family: var(--font-default);
-    font-weight: 400;
-    color: var(--color-primary);
-    font-size: 0.9rem;
-    text-align: center;
-    margin: 0 1rem;
-  }
-}
-
-@media screen and (max-width: 474px) {
   .copyRight {
-    margin: 0 1rem;
-  }
-
-  .footerInfo {
-    display: none;
+    margin-bottom: 0.5rem;
   }
 }
