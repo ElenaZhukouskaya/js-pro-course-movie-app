@@ -7,4 +7,6 @@ export default interface Movie {
   overview: string;
   vote_average: number;
   vote_count: number;
+  budget: number;
+  runtime: number;
 }

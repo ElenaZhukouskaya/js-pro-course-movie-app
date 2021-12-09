@@ -6,7 +6,7 @@ import { SortBy } from "models/SortBy";
 import { fetchMovies, setSortBy } from "store/actions/moviesAction";
 
 const TopBar: React.FC = () => {
-  const { searchInput, searchBy, total } = useSelector(
+  const { searchInput, searchBy, sortBy, total } = useSelector(
     (state: RootState) => state.movies
   );
 
@@ -31,6 +31,7 @@ const TopBar: React.FC = () => {
             value={SortBy.releaseDate}
             id="releaseDate"
             onChange={radioHandler}
+            defaultChecked={sortBy === SortBy.releaseDate}
           />
           <span className={styles.titleRadioButtons}>release date</span>
         </label>
@@ -41,7 +42,7 @@ const TopBar: React.FC = () => {
             value={SortBy.rating}
             id="releaseDate"
             onChange={radioHandler}
-            defaultChecked
+            defaultChecked={sortBy === SortBy.rating}
           />
           <span className={styles.TitleRadioButtons}>rating</span>
         </label>
