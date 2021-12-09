@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./MovieDetailsPage.module.css";
-import Movie from "common/Movie";
+import Movie from "models/Movie";
 import { useParams } from "react-router";
 import noimage from "../../images/noimage.jpg";
 

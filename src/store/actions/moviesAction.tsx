@@ -1,8 +1,8 @@
-import { ActionPayload } from "common/ActionPayload";
-import Movie from "common/Movie";
-import MoviesPayload from "common/MoviesPayload";
-import { SearchBy } from "common/SearchBy";
-import { SortBy } from "common/SortBy";
+import { ActionPayload } from "models/ActionPayload";
+import Movie from "models/Movie";
+import MoviesPayload from "models/MoviesPayload";
+import { SearchBy } from "models/SearchBy";
+import { SortBy } from "models/SortBy";
 import { Dispatch } from "react";
 import { Action } from "redux";
 import { MoviesActionType } from "store/types";

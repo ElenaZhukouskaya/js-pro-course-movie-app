@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./TopBar.module.css";
 import { RootState } from "store/store";
 import { useDispatch, useSelector } from "react-redux";
-import { SortBy } from "common/SortBy";
+import { SortBy } from "models/SortBy";
 import { fetchMovies, setSortBy } from "store/actions/moviesAction";
 
 const TopBar: React.FC = () => {
