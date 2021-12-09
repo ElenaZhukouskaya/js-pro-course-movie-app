@@ -1,6 +1,6 @@
-import Movie from "common/Movie";
-import { SearchBy } from "common/SearchBy";
-import { SortBy } from "common/SortBy";
+import Movie from "models/Movie";
+import { SearchBy } from "models/SearchBy";
+import { SortBy } from "models/SortBy";
 import { MoviesAction } from "store/actions/moviesAction";
 import { MoviesActionType } from "store/types";
 

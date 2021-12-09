@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Search.module.css";
-import { SearchBy } from "common/SearchBy";
+import { SearchBy } from "models/SearchBy";
 import { RootState } from "store/store";
 import { useDispatch, useSelector } from "react-redux";
 import {

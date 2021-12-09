@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import styles from "./MovieCard.module.css";
-import Movie from "../../common/Movie";
+import Movie from "../../models/Movie";
 import Modal from "components/Modal";
 
 interface MovieProps {
