@@ -81,5 +81,6 @@ label {
 
   .searchedMoviesAmount {
     margin-bottom: 1rem;
+    font-size: 0.9rem;
   }
 }

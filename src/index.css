@@ -9,9 +9,10 @@
 :root {
   --font-default: "Lora";
   --font-secondary: "Lato";
-  --color-background: #faf1e6;
-  --color-text: #0d0d0e;
+  --color-background: #fcecdb;
+  --color-text: #3a0402;
   --color-accent: #ca0915;
+  --color-secondary: rgba(156, 44, 43, 1);
   --color-primary: #e5ba8d;
 }
 
