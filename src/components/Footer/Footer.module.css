@@ -4,6 +4,7 @@
   background-position: center;
   background-size: cover;
   position: relative;
+  flex-shrink: 0;
 }
 
 .footer:after {

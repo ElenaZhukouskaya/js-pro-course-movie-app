@@ -1,6 +1,5 @@
 .card {
-  width: 280px;
-  height: 520px;
+  width: 240px;
   margin: 5px 5px;
   text-align: center;
   border: 1px solid var(--color-primary);
@@ -14,7 +13,7 @@
 }
 
 .image {
-  min-height: 410px;
+  min-height: 360px;
 }
 
 .wrapper {
@@ -120,99 +119,4 @@
   padding: 5px 30px;
   margin-bottom: 10px;
   font-weight: bold;
-}
-
-@media screen and (max-width: 1468px) {
-  .card {
-    max-width: 19%;
-    margin: 5px 5px;
-  }
-
-  .title {
-    font-size: 15px;
-    word-wrap: normal;
-    white-space: normal;
-  }
-
-  .genres {
-    word-wrap: normal;
-    white-space: nowrap;
-  }
-}
-
-@media screen and (max-width: 1319px) {
-  .card {
-    max-width: 19%;
-    margin: 5px 5px;
-  }
-
-  .image {
-    min-height: 390px;
-  }
-
-  .genres {
-    word-wrap: normal;
-    white-space: normal;
-  }
-}
-
-@media screen and (max-width: 1179px) {
-  .card {
-    max-width: 24%;
-    margin: 5px 5px;
-  }
-}
-
-@media screen and (max-width: 1026px) {
-  .card {
-    max-width: 32%;
-    margin: 5px 5px;
-  }
-
-  .image {
-    max-height: 370px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .card {
-    max-width: 48%;
-    margin: 5px 5px;
-  }
-
-  .image {
-    min-height: 410px;
-  }
-}
-
-@media screen and (max-width: 570px) {
-  .image {
-    max-height: 370px;
-  }
-}
-
-@media screen and (max-width: 519px) {
-  .card {
-    max-width: 75%;
-  }
-
-  .image {
-    min-height: 410px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .card {
-    max-width: 85%;
-  }
-
-  .image {
-    max-height: 370px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .card {
-    max-width: 90%;
-  }
 }
