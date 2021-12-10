@@ -11,15 +11,19 @@ import MovieDetailsPage from "pages/MovieDetailsPage";
 function App() {
   return (
     <div className={styles.App}>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies/:id" element={<MovieDetailsPage />} />
-          <Route path="*" element={<NoMatch />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <div className={styles.mainContainer}>
+        <Router>
+          <Header />
+          <div className={styles.content}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/movies/:id" element={<MovieDetailsPage />} />
+              <Route path="*" element={<NoMatch />} />
+            </Routes>
+          </div>
+          <Footer />
+        </Router>
+      </div>
     </div>
   );
 }

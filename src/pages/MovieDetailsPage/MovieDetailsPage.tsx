@@ -16,6 +16,8 @@ const MovieDetailsPage = () => {
       .then((result) => {
         setMovie(result);
       });
+
+    window.scrollTo(0, 0);
   }, [id]);
 
   return (
@@ -67,10 +69,7 @@ const MovieDetailsPage = () => {
           </div>
         </div>
       </div>
-      <p className={styles.overview}>
-        <span className={styles.item}>Overview: </span>
-        {movie?.overview}
-      </p>
+      <p className={styles.overview}>{movie?.overview}</p>
     </div>
   );
 };
